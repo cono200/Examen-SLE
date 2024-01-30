@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ExamenPrimero_SLE.Vista.Principal">
+    <StackLayout>
+        <Label Text="Calcular IMC y FCN" 
+                   FontSize="30" TextColor="Black" />
+        <Label Text="Puedes seleccionar entre acalcular tu indice de masa Corporal(IMC) y tu frecuencua cardiaca normal (FCN)"
+                   Margin="0,10,0,0"/>
+        <Grid>
+          
+            <Label Text="opciones" FontSize="30" Grid.Row="0" Margin="0,50,0,0"/>
+                <Label Text="IMC" Grid.Column="0" Grid.Row="1"/>
+                <RadioButton Content="{Binding imcOpcion}" Grid.Column="0" Grid.Row="1"/>
+            <Label Text="FCN" Grid.Column="1" Grid.Row="1"/>
+            <RadioButton Content="{Binding FCNOpcion}" Grid.Column="1" Grid.Row="1"/>
+
+
+            <Label Text="Proporcionar datos" Grid.Column="0" Grid.Row="3" FontSize="20" TextColor="Black"/>
+            <Entry Placeholder="Peso" Grid.Row="3" Text="{Binding Peso}" Keyboard="Numeric"/>
+            <Entry Placeholder="Latidos" Grid.Row="3" Grid.Column="2" Text="{Binding Latidos}" IsVisible="{Binding Desactivar}" Keyboard="Numeric"/>
+            <Entry Placeholder="Altura" Grid.Row="3" Grid.Column="1" Text="{Binding Altura}" Keyboard="Numeric" />
+
+
+
+
+            <Button Text="Calcular" Command="{Binding CalcularComand}" Grid.Column="2" Grid.Row="4"/>
+            <Entry Text="{Binding Resultado}" Grid.Column="0" Grid.Row="5"/>
+            <Label Text="{Binding ResultadoMostrar}"/>
+        </Grid>
+
+
+        </StackLayout>
+    
+<!---PESO / (ALTURA  * ALTURA)-->
+    
+    
+        
+       
+    
+</ContentPage>
