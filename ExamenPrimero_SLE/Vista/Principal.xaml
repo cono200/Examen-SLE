@@ -30,6 +30,7 @@
             <Button Text="Calcular" Command="{Binding CalcularComand}" Grid.Column="2" Grid.Row="4"/>
         </Grid>
         <Label Text="{Binding Texto}" HorizontalOptions="End"  FontSize="25" TextColor="Red"  Padding="0,0,200,-500" />
+        <Label Text="{Binding Texto1}" HorizontalOptions="End"  FontSize="25" TextColor="Red"  Padding="0,0,200,-500" />
 
 
     </StackLayout>
