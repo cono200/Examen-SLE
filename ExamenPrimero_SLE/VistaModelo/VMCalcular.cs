@@ -11,6 +11,7 @@ namespace ExamenPrimero_SLE.VistaModelo
     {
         #region VARIABLES
         string _Texto;
+        string _Texto1;
         private double _peso;
         private double _altura;
         private double _latidos;
@@ -32,6 +33,11 @@ namespace ExamenPrimero_SLE.VistaModelo
         {
             get { return _Texto; }
             set { SetValue(ref _Texto, value); }
+        }
+        public string Texto1
+        {
+            get { return _Texto1; }
+            set { SetValue(ref _Texto1, value); }
         }
         public double Peso
         {
@@ -80,44 +86,62 @@ namespace ExamenPrimero_SLE.VistaModelo
         } 
         public bool imcOpcion()
         {
-            Desactivar();
-            return IMC = true;
+
+            return IMC=  true;
             
         } 
+        /*
         public void Desactivar()
         {
-            IsVisible = "False";
+            if (imcOpcion() == true)
+            {
+                
+                IsVisible = "False";
+            }
+            else
+            {
+                IsVisible="True";
+            }
+            
              
         }
+        */
         public bool FCNOpcion()
         {
-            Desactivar();
-            return FNC = true;
+         
+            return FNC=false;
         }
         public void CalcularIMC()
         {
-            if (imcOpcion() == true)
+           
+            if (IMC == true)
             {
                 Resultado = Peso / (Altura * Altura);
                 if (Resultado <= 18)
                 {
+                    
                     DisplayAlert("Mensaje", " bajo peso", "ok");
+                    Texto1 = "Su peso es " + Resultado;
                 }
                 else if(Resultado >= 19 && Resultado <= 24.9)
                 {
                     DisplayAlert("Mensaje", "normal", "ok");
+                    Texto1 = "Su peso es " + Resultado;
                 }
                 else if(Resultado >= 25 && Resultado <= 29.9)
                 {
                     DisplayAlert("Mensaje", "Sobre Peso", "ok");
+                    Texto1 = "Su peso es " + Resultado;
                 }
                 else
                 {
                     DisplayAlert("Mensaje", "Obesidad", "ok");
+                    Texto1 = "Su peso es " + Resultado;
                 }
-                
+                Texto1 = "Su peso es " + Resultado;
+
             }
-            else if(FCNOpcion() == true)
+            else //if(FNC == false)
             {
                 Resultado = Latidos * 4;
 
@@ -135,9 +159,13 @@ namespace ExamenPrimero_SLE.VistaModelo
                     DisplayAlert("Mensaje", "FC Alta", "ok");
 
                 }
+                Texto = "Sus latidos son " + Resultado;
+
             }
+            
         }
-       
+        
+
 
         #endregion
         #region COMANDOS

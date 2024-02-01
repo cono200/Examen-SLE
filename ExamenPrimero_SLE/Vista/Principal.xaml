@@ -11,26 +11,29 @@
           
             <Label Text="opciones" FontSize="30" Grid.Row="0" Margin="0,50,0,0"/>
                 <Label Text="IMC" Grid.Column="0" Grid.Row="1"/>
-                <RadioButton Content="{Binding imcOpcion}" Grid.Column="0" Grid.Row="1"/>
+            <RadioButton IsChecked="{Binding IMC}" Grid.Column="0" Grid.Row="1"/>
             <Label Text="FCN" Grid.Column="1" Grid.Row="1"/>
-            <RadioButton Content="{Binding FCNOpcion}" Grid.Column="1" Grid.Row="1"/>
+
+            <RadioButton IsChecked="{Binding FNC}" Grid.Column="1" Grid.Row="1">
+                
+            </RadioButton>
 
 
-            <Label Text="Proporcionar datos" Grid.Column="0" Grid.Row="3" FontSize="20" TextColor="Black"/>
-            <Entry Placeholder="Peso" Grid.Row="3" Text="{Binding Peso}" Keyboard="Numeric"/>
-            <Entry Placeholder="Latidos" Grid.Row="3" Grid.Column="2" Text="{Binding Latidos}" IsVisible="{Binding Desactivar}" Keyboard="Numeric"/>
-            <Entry Placeholder="Altura" Grid.Row="3" Grid.Column="1" Text="{Binding Altura}" Keyboard="Numeric" />
+            <Label Text="Proporcionar datos" Grid.Column="0" Grid.Row="3" FontSize="15" TextColor="Black"/>
+            <Entry Placeholder="Peso" Grid.Row="3" Text="{Binding Peso}" Keyboard="Numeric" IsVisible="{Binding Desactivar}" x:Name="peso"/>
+            <Entry Placeholder="Latidos" Grid.Row="3" Grid.Column="2" Text="{Binding Latidos}" IsVisible="{Binding Desactivar}" Keyboard="Numeric" x:Name="latidos"/>
+            <Entry Placeholder="Altura" Grid.Row="3" Grid.Column="1" Text="{Binding Altura}" Keyboard="Numeric" IsVisible="{Binding Desactivar}" x:Name="altura" />
 
 
 
 
             <Button Text="Calcular" Command="{Binding CalcularComand}" Grid.Column="2" Grid.Row="4"/>
-            <Entry Text="{Binding Resultado}" Grid.Column="0" Grid.Row="5"/>
-            <Label Text="{Binding ResultadoMostrar}"/>
         </Grid>
+        <Label Text="{Binding Texto}" HorizontalOptions="End"  FontSize="25" TextColor="Red"  Padding="0,0,200,-500" />
 
 
-        </StackLayout>
+    </StackLayout>
+    
     
 <!---PESO / (ALTURA  * ALTURA)-->
     
